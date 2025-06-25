@@ -1,0 +1,16 @@
+name: hellotest
+on:
+    workflow_dispatch:
+
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Hello World
+          run: echo "Hello, World!"
+        - name: Check out code
+          uses: actions/checkout@v4
+        - name: Run a script
+          run: |
+            echo "This is a script running in the workflow."
+            echo "You can add more commands here."
