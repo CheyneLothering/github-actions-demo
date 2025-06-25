@@ -13,6 +13,7 @@ on:
 jobs:
     hello:
         runs-on: ubuntu-latest
+        environment: development
         steps:
         - name: Hello World
           run: echo "Hello, World!"
@@ -23,3 +24,5 @@ jobs:
             echo "This is a script running in the workflow."
             echo "You can add more commands here."
             echo "Environment: ${{ inputs.environment }}"
+            echo "${{vars.MY_ENVIRONMENT_VARIABLE}}"
+            echo "${{secrets.SECRET_NAME}}"
