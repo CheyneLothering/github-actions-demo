@@ -1,0 +1,8 @@
+FROM nginx:alpine
+
+ARG PAGE_TEXT="1"
+ENV PAGE_TEXT=${PAGE_TEXT}
+
+RUN echo "<!DOCTYPE html><html><head><title>Hello</title></head><body><h1>Linux Image - ${PAGE_TEXT}</h1></body></html>" > /usr/share/nginx/html/index.html
+
+EXPOSE 80
